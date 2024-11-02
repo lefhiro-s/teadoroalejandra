@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Cumpleaños, Alejandra</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto&display=swap" rel="stylesheet">
+    <!-- AOS Animations CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <!-- Pantalla de Inicio -->
+    <section id="inicio" class="hero-section">
+        <div class="candle-container" onclick="triggerFireworks()">
+            <img src="images/vela.svg" alt="Vela" id="vela">
+        </div>
+        <h1 id="birthday-text">Feliz Cumpleaños, Alejandra</h1>
+        <audio id="firework-sound" src="sounds/firework.mp3" preload="auto"></audio>
+        <canvas id="confetti-canvas"></canvas>
+    </section>
+
+    <!-- Nuestra Familia -->
+    <section id="nuestra-familia" class="family-section" data-aos="fade-up">
+        <div class="family-content">
+            <h2>Nuestra Familia</h2>
+            <p>En cada momento, tu presencia ilumina nuestras vidas. Eres el corazón de nuestra familia y no podríamos imaginar un día sin ti.</p>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="images/alex.jpg" alt="Alejandra">
+                    <p>Alejandra</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/perro1.jpg" alt="Perro 1">
+                    <p>Fido</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/perro2.jpg" alt="Perro 2">
+                    <p>Rex</p>
+                </div>
+                <!-- Más elementos según sea necesario -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Globos de Deseos -->
+    <section id="globos-de-deseos" class="wishes-section" data-aos="fade-up">
+        <div class="wishes-content">
+            <h2>Globos de Deseos</h2>
+            <p>Mis deseos para ti en este nuevo año de vida.</p>
+            <div class="balloons">
+                <div class="balloon">
+                    <img src="images/globo1.png" alt="Estudiar Enfermería">
+                    <div class="balloon-text">
+                        <h3>Estudiar Enfermería</h3>
+                        <p>Estoy seguro de que lograrás inscribirte y comenzar tus estudios. ¡Tu dedicación te llevará lejos!</p>
+                    </div>
+                </div>
+                <div class="balloon">
+                    <img src="images/globo2.png" alt="Viajar Más">
+                    <div class="balloon-text">
+                        <h3>Viajar Más</h3>
+                        <p>Que este año nos lleve a descubrir nuevos lugares y vivir aventuras inolvidables juntos.</p>
+                    </div>
+                </div>
+                <!-- Más globos según sea necesario -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Nuestras Aventuras -->
+    <section id="aventuras" class="adventures-section" data-aos="fade-up">
+        <div class="adventures-content">
+            <h2>Nuestras Aventuras</h2>
+            <p>Recuerdos de nuestras aventuras pasadas y lo que nos espera en el futuro.</p>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>Viaje a la Playa - 2023</h3>
+                        <p>Un día inolvidable disfrutando del sol y el mar.</p>
+                        <img src="images/viaje-playa.jpg" alt="Playa 2023">
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3>Aventura de Senderismo - 2024</h3>
+                        <p>Explorando nuevos senderos y disfrutando de la naturaleza.</p>
+                        <img src="images/senderismo.jpg" alt="Senderismo 2024">
+                    </div>
+                </div>
+                <!-- Más elementos de la línea de tiempo -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Mensaje Final -->
+    <section id="mensaje-final" class="final-message-section" data-aos="fade-up">
+        <div class="final-message-content">
+            <h2>¡Te Amo, Alejandra!</h2>
+            <p>Este nuevo año solo marca el comienzo de más momentos increíbles juntos. Estoy emocionado por todo lo que nos depara el futuro.</p>
+        </div>
+    </section>
+
+    <!-- Final Emotivo -->
+    <section id="final-emotivo" class="final-emotivo-section" data-aos="fade-up">
+        <div class="final-emotivo-content">
+            <img src="images/mecha.svg" alt="Mecha Encendida" class="mecha">
+            <p>Esto es solo el comienzo de nuestro maravilloso viaje juntos.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2024 Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- AOS Animations JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <!-- GSAP JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <!-- Canvas Confetti JS -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <!-- JavaScript Personalizado -->
+    <script src="script.js"></script>
+    <script>
+        AOS.init({
+            duration: 1200,
+            once: true, // Animations only once
+        });
+    </script>
+</body>
+</html>

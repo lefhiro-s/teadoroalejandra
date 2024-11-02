@@ -1,0 +1,395 @@
+/* Reset de márgenes y paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Tipografía */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Botones */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff6f61;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #e65c50;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.candle-container {
+    cursor: pointer;
+    animation: flicker 1.5s infinite;
+}
+
+#vela {
+    width: 100px;
+    height: auto;
+}
+
+#birthday-text {
+    color: #fff;
+    font-family: 'Pacifico', cursive;
+    font-size: 3em;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Animación de flicker para la vela */
+@keyframes flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+/* Nuestra Familia Section */
+.family-section {
+    padding: 60px 20px;
+    background-color: #fff;
+    color: #333;
+    text-align: center;
+}
+
+.family-section h2 {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #ff6f61;
+}
+
+.family-section p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.gallery-item {
+    width: 200px;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.gallery-item p {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Globos de Deseos Section */
+.wishes-section {
+    padding: 60px 20px;
+    background-color: #f0f8ff;
+    color: #333;
+    text-align: center;
+}
+
+.wishes-section h2 {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #6b5b95;
+}
+
+.wishes-section p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.balloons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    position: relative;
+    height: 400px;
+}
+
+.balloon {
+    position: relative;
+    width: 150px;
+    height: 200px;
+    animation: float 6s ease-in-out infinite;
+    cursor: pointer;
+}
+
+.balloon img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.balloon-text {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 10px;
+    display: none;
+    width: 140px;
+}
+
+.balloon:hover .balloon-text {
+    display: block;
+    animation: fadeIn 0.5s;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Aventuras y Momentos Especiales Section */
+.adventures-section {
+    padding: 60px 20px;
+    background-color: #fff;
+    color: #333;
+    text-align: center;
+}
+
+.adventures-section h2 {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #ff6f61;
+}
+
+.adventures-section p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: #ff6f61;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+}
+
+.timeline-item {
+    padding: 20px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+
+.timeline-item.left {
+    left: 0;
+}
+
+.timeline-item.right {
+    left: 50%;
+}
+
+.timeline-content {
+    padding: 20px 30px;
+    background-color: #f9f9f9;
+    position: relative;
+    border-radius: 6px;
+    transition: transform 0.3s;
+}
+
+.timeline-item.left .timeline-content,
+.timeline-item.right .timeline-content {
+    opacity: 0;
+    transform: translateX(-50px);
+}
+
+.timeline-item.left[data-aos="fade-up"].aos-animate .timeline-content,
+.timeline-item.right[data-aos="fade-up"].aos-animate .timeline-content {
+    transform: translateX(0);
+    opacity: 1;
+    transition: transform 1s ease, opacity 1s ease;
+}
+
+.timeline-content img {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .timeline::after {
+        left: 31px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+
+    .timeline-item.right {
+        left: 0%;
+    }
+
+    .timeline-item.left::before, .timeline-item.right::before {
+        left: 60px;
+        border: medium solid #ff6f61;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent #ff6f61 transparent transparent;
+    }
+}
+
+/* Mensaje Final Section */
+.final-message-section {
+    padding: 60px 20px;
+    background-color: #f0e68c;
+    color: #333;
+    text-align: center;
+}
+
+.final-message-section h2 {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #6b5b95;
+    animation: zoomIn 1s ease-in-out;
+}
+
+.final-message-section p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0); }
+    to { transform: scale(1); }
+}
+
+/* Final Emotivo Section */
+.final-emotivo-section {
+    padding: 60px 20px;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    position: relative;
+}
+
+.final-emotivo-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.final-emotivo-content .mecha {
+    width: 100px;
+    height: auto;
+    animation: flicker 1.5s infinite;
+    margin-bottom: 20px;
+}
+
+.final-emotivo-content p {
+    font-size: 1.2em;
+    color: #ffd700;
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 1em;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gallery-item {
+        width: 80%;
+    }
+
+    .balloons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .balloon {
+        width: 100px;
+        height: 150px;
+    }
+
+    .adventures-section .timeline-item {
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+}
