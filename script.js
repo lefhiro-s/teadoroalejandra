@@ -1,54 +1,53 @@
-// Función para encender la vela y mostrar el texto
-document.addEventListener('DOMContentLoaded', () => {
-    const vela = document.getElementById('vela');
-    const birthdayText = document.getElementById('birthday-text');
+// Función para activar confeti y sonidos
+function activateCelebration() {
+    // Reproducir sonido de confeti
+    const confettiSound = document.getElementById('confetti-sound');
+    confettiSound.play();
 
-    // Animación inicial de encendido de la vela
-    setTimeout(() => {
-        // Supongamos que la vela se enciende después de 1 segundo
-        birthdayText.style.opacity = 1;
-    }, 1000);
-});
-
-// Función para activar fuegos artificiales y sonidos
-function triggerFireworks() {
-    const vela = document.getElementById('vela');
-    const confettiCanvas = document.getElementById('confetti-canvas');
-    const fireworkSound = document.getElementById('firework-sound');
-
-    // Apagar la vela
-    vela.style.animation = 'none';
-    vela.style.opacity = 0;
-
-    // Reproducir sonido de fuegos artificiales
-    fireworkSound.play();
-
-    // Lanzar fuegos artificiales
+    // Lanzar confeti usando Canvas Confetti
     launchConfetti();
+
+    // Mostrar las palabras emotivas
+    showEmotiveWords();
+
+    // Opcional: Deshabilitar el botón después de clic para evitar múltiples activaciones
+    const touchButton = document.querySelector('.touch-button');
+    touchButton.disabled = true;
+    touchButton.style.cursor = 'default';
+    touchButton.style.opacity = '0.5';
 }
 
-// Función para lanzar confeti usando Canvas Confetti
+// Función para lanzar confeti
 function launchConfetti() {
     const duration = 5 * 1000;
-    const animationEnd = Date.now() + duration;
-    const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 9999 };
+    const end = Date.now() + duration;
 
-    function randomInRange(min, max) {
-        return Math.random() * (max - min) + min;
-    }
+    (function frame() {
+        confetti({
+            particleCount: 3,
+            angle: 60,
+            spread: 55,
+            origin: { x: 0 },
+            colors: ['#FF69B4', '#FFB6C1', '#FFC0CB', '#DA70D6'] // Colores lila y complementarios
+        });
+        confetti({
+            particleCount: 3,
+            angle: 120,
+            spread: 55,
+            origin: { x: 1 },
+            colors: ['#FF69B4', '#FFB6C1', '#FFC0CB', '#DA70D6']
+        });
 
-    const interval = setInterval(function() {
-        const timeLeft = animationEnd - Date.now();
-
-        if (timeLeft <= 0) {
-            return clearInterval(interval);
+        if (Date.now() < end) {
+            requestAnimationFrame(frame);
         }
+    }());
+}
 
-        const particleCount = 50 * (timeLeft / duration);
-        // since particles fall down, skew start velocity
-        confetti(Object.assign({}, defaults, { 
-            particleCount, 
-            origin: { x: randomInRange(0, 1), y: Math.random() - 0.2 }
-        }));
-    }, 250);
+// Función para mostrar las palabras emotivas
+function showEmotiveWords() {
+    const words = document.querySelectorAll('.word');
+    words.forEach(word => {
+        word.classList.add('aos-animate');
+    });
 }
