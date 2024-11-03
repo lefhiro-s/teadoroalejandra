@@ -8,8 +8,8 @@
 /* Tipografía */
 body {
     font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
-    color: #333;
+    color: #4B0082; /* Indigo, complementario del lila */
+    background-color: #E6E6FA; /* Lavender, un tono lila claro */
     overflow-x: hidden;
 }
 
@@ -17,7 +17,7 @@ body {
 .btn {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #ff6f61;
+    background-color: #DA70D6; /* Orchid */
     color: #fff;
     text-decoration: none;
     border-radius: 25px;
@@ -26,7 +26,7 @@ body {
 }
 
 .btn:hover {
-    background-color: #e65c50;
+    background-color: #BA55D3;
 }
 
 /* Hero Section */
@@ -34,38 +34,86 @@ body {
     position: relative;
     width: 100%;
     height: 100vh;
-    background-color: #000;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-color: #E6E6FA; /* Lavender */
     overflow: hidden;
 }
 
-.candle-container {
-    cursor: pointer;
-    animation: flicker 1.5s infinite;
-}
-
-#vela {
-    width: 100px;
+/* Contenedor del Pastel */
+.cake-container {
+    position: relative;
+    width: 300px;
     height: auto;
+    z-index: 1;
 }
 
-#birthday-text {
+/* Imagen del Pastel */
+.pastel {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Botón "Tócame" */
+.touch-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #DA70D6; /* Orchid */
     color: #fff;
-    font-family: 'Pacifico', cursive;
-    font-size: 3em;
-    opacity: 0;
-    transition: opacity 2s ease-in-out;
-    text-align: center;
-    margin-top: 20px;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border-radius: 25px;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.3s, transform 0.3s;
 }
 
-/* Animación de flicker para la vela */
-@keyframes flicker {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.8; }
+.touch-button:hover {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.05);
+}
+
+/* Palabras Emotivas */
+.emotive-words {
+    position: absolute;
+    top: 20%;
+    width: 100%;
+    text-align: center;
+    pointer-events: none; /* Para que no interfiera con el botón */
+}
+
+.word {
+    display: block;
+    font-family: 'Pacifico', cursive;
+    font-size: 2em;
+    color: #FFD700; /* Dorado */
+    margin: 10px 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+/* Animación Persistente de Palabras */
+.word.aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Canvas Confeti */
+#confetti-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
 }
 
 /* Nuestra Familia Section */
@@ -80,7 +128,7 @@ body {
     font-family: 'Pacifico', cursive;
     font-size: 2.5em;
     margin-bottom: 20px;
-    color: #ff6f61;
+    color: #DA70D6; /* Orchid */
 }
 
 .family-section p {
@@ -122,7 +170,7 @@ body {
 /* Globos de Deseos Section */
 .wishes-section {
     padding: 60px 20px;
-    background-color: #f0f8ff;
+    background-color: #F8F0FF; /* Lavanda más clara */
     color: #333;
     text-align: center;
 }
@@ -131,7 +179,7 @@ body {
     font-family: 'Pacifico', cursive;
     font-size: 2.5em;
     margin-bottom: 20px;
-    color: #6b5b95;
+    color: #BA55D3; /* MediumOrchid */
 }
 
 .wishes-section p {
@@ -206,7 +254,7 @@ body {
     font-family: 'Pacifico', cursive;
     font-size: 2.5em;
     margin-bottom: 20px;
-    color: #ff6f61;
+    color: #DA70D6; /* Orchid */
 }
 
 .adventures-section p {
@@ -227,7 +275,7 @@ body {
     content: '';
     position: absolute;
     width: 6px;
-    background-color: #ff6f61;
+    background-color: #DA70D6; /* Orchid */
     top: 0;
     bottom: 0;
     left: 50%;
@@ -251,7 +299,7 @@ body {
 
 .timeline-content {
     padding: 20px 30px;
-    background-color: #f9f9f9;
+    background-color: #F0F8FF; /* AliceBlue */
     position: relative;
     border-radius: 6px;
     transition: transform 0.3s;
@@ -293,16 +341,16 @@ body {
 
     .timeline-item.left::before, .timeline-item.right::before {
         left: 60px;
-        border: medium solid #ff6f61;
+        border: medium solid #DA70D6; /* Orchid */
         border-width: 10px 10px 10px 0;
-        border-color: transparent #ff6f61 transparent transparent;
+        border-color: transparent #DA70D6 transparent transparent;
     }
 }
 
 /* Mensaje Final Section */
 .final-message-section {
     padding: 60px 20px;
-    background-color: #f0e68c;
+    background-color: #E6E6FA; /* Lavender */
     color: #333;
     text-align: center;
 }
@@ -311,7 +359,7 @@ body {
     font-family: 'Pacifico', cursive;
     font-size: 2.5em;
     margin-bottom: 20px;
-    color: #6b5b95;
+    color: #BA55D3; /* MediumOrchid */
     animation: zoomIn 1s ease-in-out;
 }
 
@@ -331,7 +379,7 @@ body {
 /* Final Emotivo Section */
 .final-emotivo-section {
     padding: 60px 20px;
-    background-color: #000;
+    background-color: #4B0082; /* Indigo */
     color: #fff;
     text-align: center;
     position: relative;
@@ -351,7 +399,12 @@ body {
 
 .final-emotivo-content p {
     font-size: 1.2em;
-    color: #ffd700;
+    color: #FFD700; /* Dorado */
+}
+
+@keyframes flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
 }
 
 /* Footer */
