@@ -8,17 +8,25 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto&display=swap" rel="stylesheet">
     <!-- AOS Animations CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="libs/aos.css">
 </head>
 <body>
-    <!-- Pantalla de Inicio -->
+    <!-- Sección de Inicio (Hero Section) -->
     <section id="inicio" class="hero-section">
-        <div class="candle-container" onclick="triggerFireworks()">
-            <img src="images/vela.svg" alt="Vela" id="vela">
+        <div class="cake-container">
+            <img src="images/pastel-azul.png" alt="Pastel Azul" class="pastel">
+            <button class="touch-button" onclick="activateCelebration()">Tócame</button>
         </div>
-        <h1 id="birthday-text">Feliz Cumpleaños, Alejandra</h1>
-        <audio id="firework-sound" src="sounds/firework.mp3" preload="auto"></audio>
+        <!-- Palabras Emotivas con Animaciones -->
+        <div class="emotive-words">
+            <span class="word" data-aos="fade-up">Te Amo</span>
+            <span class="word" data-aos="fade-up" data-aos-delay="200">Te Adoro</span>
+            <span class="word" data-aos="fade-up" data-aos-delay="400">Te mereces el mundo entero</span>
+        </div>
+        <!-- Canvas para Confeti -->
         <canvas id="confetti-canvas"></canvas>
+        <!-- Sonido de Confeti -->
+        <audio id="confetti-sound" src="sounds/confetti-sound.mp3" preload="auto"></audio>
     </section>
 
     <!-- Nuestra Familia -->
@@ -115,18 +123,18 @@
         <p>© 2024 Todos los derechos reservados.</p>
     </footer>
 
+    <!-- Scripts al final del Body -->
     <!-- AOS Animations JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <!-- GSAP JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="libs/aos.js"></script>
     <!-- Canvas Confetti JS -->
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script src="libs/canvas-confetti.browser.min.js"></script>
     <!-- JavaScript Personalizado -->
     <script src="script.js"></script>
     <script>
+        // Inicializar AOS
         AOS.init({
-            duration: 1200,
-            once: true, // Animations only once
+            duration: 1000,
+            once: true, // Animaciones solo una vez
         });
     </script>
 </body>
