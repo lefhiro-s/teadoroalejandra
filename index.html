@@ -13,18 +13,20 @@
 <body>
     <!-- Sección de Inicio (Hero Section) -->
     <section id="inicio" class="hero-section">
+        <!-- Pastel Azul -->
         <div class="cake-container">
             <img src="images/pastel-azul.svg" alt="Pastel Azul" class="pastel">
-            <button class="touch-button" onclick="activateCelebration()">Tócame</button>
         </div>
-        <!-- Palabras Emotivas con Animaciones -->
-        <div class="emotive-words">
-            <span class="word" data-aos="fade-up">Te Amo</span>
-            <span class="word" data-aos="fade-up" data-aos-delay="200">Te Adoro</span>
-            <span class="word" data-aos="fade-up" data-aos-delay="400">Te mereces el mundo entero</span>
-        </div>
+        <!-- Botón "Tócame" -->
+        <button class="touch-button" onclick="activateCelebration()">Tócame</button>
         <!-- Texto Principal -->
-        <h1 class="main-text" data-aos="fade-in">Feliz Cumpleaños, Alejandra</h1>
+        <h1 class="main-text">Feliz Cumpleaños, Alejandra</h1>
+        <!-- Palabras Emotivas Flotantes -->
+        <div class="emotive-words">
+            <span class="word" id="word1">Te Amo</span>
+            <span class="word" id="word2">Te Adoro</span>
+            <span class="word" id="word3">Te mereces el mundo entero</span>
+        </div>
         <!-- Canvas para Confeti -->
         <canvas id="confetti-canvas"></canvas>
         <!-- Sonido de Confeti -->
