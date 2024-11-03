@@ -13,24 +13,27 @@
 <body>
     <!-- Sección de Inicio (Hero Section) -->
     <section id="inicio" class="hero-section">
-        <!-- Pastel Azul -->
-        <div class="cake-container">
-            <img src="images/pastel-azul.svg" alt="Pastel Azul" class="pastel">
+        <div class="hero-content">
+            <!-- Texto Principal -->
+            <h1 class="main-text" data-aos="fade-in">Feliz Cumpleaños</h1>
+            <h2 class="main-text" data-aos="fade-in" data-aos-delay="500">Alejandra</h2>
+            
+            <!-- Pastel Azul y Botón "Tócame" -->
+            <div class="cake-button-container">
+                <img src="images/pastel-azul.svg" alt="Pastel Azul" class="pastel">
+                <button class="touch-button" onclick="activateCelebration()">Tócame</button>
+            </div>
         </div>
-        <!-- Botón "Tócame" -->
-        <button class="touch-button" onclick="activateCelebration()">Tócame</button>
-        <!-- Texto Principal -->
-        <h1 class="main-text">Feliz Cumpleaños, Alejandra</h1>
-        <!-- Palabras Emotivas Flotantes -->
-        <div class="emotive-words">
-            <span class="word" id="word1">Te Amo</span>
-            <span class="word" id="word2">Te Adoro</span>
-            <span class="word" id="word3">Te mereces el mundo entero</span>
+        <!-- Palabras Emotivas Superpuestas -->
+        <div class="emotive-words text-center">
+            <p class="word">Te Adoro</p>
+            <p class="word">Te Extraño</p>
+            <p class="word">Eres Mi Mundo</p>
         </div>
         <!-- Canvas para Confeti -->
         <canvas id="confetti-canvas"></canvas>
         <!-- Sonido de Confeti -->
-        <audio id="confetti-sound" src="sounds/confetti-sound.mp3" preload="auto"></audio>
+        <audio id="confetti-sound" src="sounds/sound-1.mp3" preload="auto"></audio>
     </section>
 
     <!-- Nuestra Familia -->
@@ -40,18 +43,25 @@
             <p>En cada momento, tu presencia ilumina nuestras vidas. Eres el corazón de nuestra familia y no podríamos imaginar un día sin ti.</p>
             <div class="gallery">
                 <div class="gallery-item">
-                    <img src="images/alex.jpg" alt="Alejandra">
-                    <p>Alejandra</p>
+                    <img src="images/foto-1.jpeg" alt="Alejandra" class="rotated-image">
+                    <p>Tu siempre llevando esa sonrisa tan hermosa y esa capacidad de amar tan grande que me hace enamorarte de ti cada vez mas</p>
                 </div>
                 <div class="gallery-item">
-                    <img src="images/perro1.jpg" alt="Perro 1">
-                    <p>Fido</p>
+                    <img src="images/foto-21.jpg" alt="Filomena" class="rotated-image">
+                    <p>Siempre y para siempre la mujer mas perfecta que existe, eres mi mayor deseo en el mundo</p>
                 </div>
                 <div class="gallery-item">
-                    <img src="images/perro2.jpg" alt="Perro 2">
-                    <p>Rex</p>
+                    <img src="images/foto-2.jpeg" alt="tuyyo" class="rotated-image">
+                    <p>La persona mas importante de este sujeto</p>
                 </div>
-                <!-- Más elementos según sea necesario -->
+                <div class="gallery-item">
+                    <img src="images/foto-3.jpeg" alt="tuyyo" class="rotated-image">
+                    <p>La humana favorita de este perrito</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/foto-17.jpeg" alt="tuyyo" class="rotated-image">
+                    <p>Y La humana favorita de esta perrita</p>
+                </div>
             </div>
         </div>
     </section>
@@ -59,24 +69,39 @@
     <!-- Globos de Deseos -->
     <section id="globos-de-deseos" class="wishes-section" data-aos="fade-up">
         <div class="wishes-content">
-            <h2>Globos de Deseos</h2>
-            <p>Mis deseos para ti en este nuevo año de vida.</p>
+            <h2>Mis Deseos para ti</h2>
+            <p>En este nuevo año de vida, quiero que:</p>
             <div class="balloons">
                 <div class="balloon">
                     <img src="images/globo-1.svg" alt="Estudiar Enfermería">
                     <div class="balloon-text">
-                        <h3>Estudiar Enfermería</h3>
-                        <p>Estoy seguro de que lograrás inscribirte y comenzar tus estudios. ¡Tu dedicación te llevará lejos!</p>
+                        <p>Que puedas inscribirte y comenzar tus estudios con éxito. <strong>¡Tu dedicación te llevará lejos!</strong></p>
                     </div>
                 </div>
                 <div class="balloon">
                     <img src="images/globo-2.svg" alt="Viajar Más">
                     <div class="balloon-text">
-                        <h3>Viajar Más</h3>
-                        <p>Que este año nos lleve a descubrir nuevos lugares y vivir aventuras inolvidables juntos.</p>
+                        <p>Que puedas seguir viviendo con salud y prosperidad cada día, sin preocuparte</p>
                     </div>
                 </div>
-                <!-- Más globos según sea necesario -->
+                <div class="balloon">
+                    <img src="images/globo-1.svg" alt="Tener un Hijo">
+                    <div class="balloon-text">
+                        <p>Que pronto podamos hacer crecer mas nuestra familia y llenar nuestros días de mas amor.</p>
+                    </div>
+                </div>
+                <div class="balloon">
+                    <img src="images/globo-2.svg" alt="Boda Perfecta">
+                    <div class="balloon-text">
+                        <p>Que tengas la boda de tus sueños, llena de amor y felicidad, tal como te lo mereces.</p>
+                    </div>
+                </div>
+                <div class="balloon">
+                    <img src="images/globo-1.svg" alt="Conocer el Mundo">
+                    <div class="balloon-text">
+                        <p>Que este año te lleve a descubrir nuevos lugares y vivir aventuras inolvidables.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -84,33 +109,92 @@
     <!-- Nuestras Aventuras -->
     <section id="aventuras" class="adventures-section" data-aos="fade-up">
         <div class="adventures-content">
-            <h2>Nuestras Aventuras</h2>
-            <p>Recuerdos de nuestras aventuras pasadas y lo que nos espera en el futuro.</p>
+            <h2>Recuerdos</h2>
+            <p>Que recordemos este año, y todo lo que vivimos con nostalgia y deseos de seguir juntos</p>
             <div class="timeline">
-                <div class="timeline-item left">
+                <div class="timeline-item left" data-aos="fade-up">
                     <div class="timeline-content">
-                        <h3>Viaje a la Playa - 2023</h3>
-                        <p>Un día inolvidable disfrutando del sol y el mar.</p>
-                        <img src="images/viaje-playa.jpg" alt="Playa 2023">
+                        <h3>Viaje inolvidable junto a ti, a la ciudad bonita</h3>
+                        <img src="images/foto-6.jpeg" alt="Viaje a la Playa 2023" class="rotated-image">
                     </div>
                 </div>
-                <div class="timeline-item right">
+                <div class="timeline-item right" data-aos="fade-up">
                     <div class="timeline-content">
-                        <h3>Aventura de Senderismo - 2024</h3>
-                        <p>Explorando nuevos senderos y disfrutando de la naturaleza.</p>
-                        <img src="images/senderismo.jpg" alt="Senderismo 2024">
+                        <h3>Llevando al límite nuestros miedos y nuestra tolerancia a las náuseas</h3>
+                        <img src="images/foto-24.jpeg" alt="Senderismo 2024" class="rotated-image">
                     </div>
                 </div>
-                <!-- Más elementos de la línea de tiempo -->
+                <div class="timeline-item right" data-aos="fade-up">
+                    <div class="timeline-content">
+                        <h3>De paseo a Caracas por unos Quince Años</h3>
+                        <img src="images/foto-9.jpeg" alt="Senderismo 2024" class="rotated-image">
+                    </div>
+                </div>
+                <div class="timeline-item right" data-aos="fade-up">
+                    <div class="timeline-content">
+                        <h3>En el cumpleaños del humano de reemplazo</h3>
+                        <img src="images/foto-25.jpeg" alt="Senderismo 2024" class="rotated-image">
+                    </div>
+                </div>
+                <div class="timeline-item right" data-aos="fade-up">
+                    <div class="timeline-content">
+                        <h3>En Navidad siempre juntos</h3>
+                        <img src="images/foto-30.jpeg" alt="Senderismo 2024" class="rotated-image">
+                    </div>
+                </div>
+                <div class="timeline-item right" data-aos="fade-up">
+                    <div class="timeline-content">
+                        <h3>En Sesión fotografica de nuestros perritos del mal</h3>
+                        <img src="images/foto-28.jpeg" alt="Senderismo 2024" class="rotated-image">
+                        <img src="images/foto-26.jpeg" alt="Senderismo 2024" class="rotated-image">
+                    </div>
+                </div>
+                <div class="timeline-item right" data-aos="fade-up">
+                    <div class="timeline-content">
+                        <h3>En tu restaurante Favorito</h3>
+                        <img src="images/foto-27.jpeg" alt="Senderismo 2024" class="rotated-image">
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-
+    <section id="futuro" class="adventures-section" data-aos="fade-up">
+        <div class="futuro-adventures-content">
+            <h2>Aventuras</h2>
+            <p>Que podamos hacer cada dia de nuestra vida una nueva aventura, y que podamos explorar el mundo juntos</p>
+            <div class="timeline">
+                <div class="timeline-item left" data-aos="fade-up">
+                    <div class="timeline-content">
+                        <h3>Viajar a nuevos lugares</h3>
+                        <img src="images/foto-31.jpg" alt="Viaje a la Playa 2023" class="rotated-image" style="opacity: 0.4;">
+                    </div>
+                </div>
+                <div class="timeline-item right" data-aos="fade-up">
+                    <div class="timeline-content">
+                        <h3>Seguir llevando nuestros miedos al limite</h3>
+                        <img src="images/foto-32.jpg" alt="Senderismo 2024" class="rotated-image" style="opacity: 0.4;">
+                    </div>
+                </div>
+                <div class="timeline-item right" data-aos="fade-up">
+                    <div class="timeline-content">
+                        <h3>Que podamos viajar con libertad a donde queramos</h3>
+                        <img src="images/foto-33.jpg" alt="Senderismo 2024" class="rotated-image" style="opacity: 0.4;">
+                    </div>
+                </div>
+                <div class="timeline-item right" data-aos="fade-up">
+                    <div class="timeline-content">
+                        <h3>Y quien sabe a donde nos depare el mundo</h3>
+                        <img src="images/foto-29.jpg" alt="Senderismo 2024" class="rotated-image" style="opacity: 0.4;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- Mensaje Final -->
     <section id="mensaje-final" class="final-message-section" data-aos="fade-up">
         <div class="final-message-content">
             <h2>¡Te Amo, Alejandra!</h2>
-            <p>Este nuevo año solo marca el comienzo de más momentos increíbles juntos. Estoy emocionado por todo lo que nos depara el futuro.</p>
+            <p>Este nuevo año marca el comienzo de más momentos increíbles juntos. Estoy felíz por todo lo que nos depara el futuro. Te adoro y mucho eres todo el motor de mi vida, y quiero que este dia marque los proximos 365 dias de felicidad para ti, que seas felíz que puedas completar cada una de tus metas y yo solo estare alli observando y apoyandote cuando lo necesites</p>
         </div>
     </section>
 
@@ -118,13 +202,17 @@
     <section id="final-emotivo" class="final-emotivo-section" data-aos="fade-up">
         <div class="final-emotivo-content">
             <img src="images/vela.svg" alt="Mecha Encendida" class="mecha">
-            <p>Esto es solo el comienzo de nuestro maravilloso viaje juntos.</p>
+            <h2>Esto sera un paso nuevo de nuestro maravilloso viaje juntos</h2>
+            <br>
+            <h3>Aqui te esperamos</h3>
+            <h3>Filomena, Bartolomeo y yo</h3>
+            <h3>A ti, nuestra Humana Favorita</h3>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <p>© 2024 Todos los derechos reservados.</p>
+        <p>© 2024 Todo lo que yo trabaje todo es para ti, Tu eres quien tiene Derecho</p>
     </footer>
 
     <!-- Scripts al final del Body -->

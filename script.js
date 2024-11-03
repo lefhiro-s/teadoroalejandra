@@ -1,39 +1,40 @@
-// script.js
-
-// Variable para controlar si las palabras ya han aparecido
-let wordsShown = false;
-
 // Función para activar confeti y mostrar palabras emotivas
 function activateCelebration() {
-    if (wordsShown) return; // Evita ejecutar si ya se han mostrado las palabras
-
-    // Desactivar el botón temporalmente
     const touchButton = document.querySelector('.touch-button');
+    const confettiSound = document.getElementById('confetti-sound');
+    const pastel = document.querySelector('.pastel');
+    const emotiveWords = document.querySelector('.emotive-words');
+
+    // Deshabilitar el botón para evitar múltiples clics
     touchButton.disabled = true;
-    touchButton.style.cursor = 'default';
-    touchButton.style.opacity = '0.5';
 
     // Reproducir sonido de confeti
-    const confettiSound = document.getElementById('confetti-sound');
+    confettiSound.currentTime = 0; // Reiniciar sonido si se reproduce nuevamente
     confettiSound.play();
+
+    // Ocultar pastel con transición
+    pastel.style.opacity = '0';
+    pastel.style.transform = 'scale(0.8) rotate(-10deg)'; // Reducir tamaño y rotar para ocultarlo
+
+    // Mostrar palabras emotivas con animación
+    emotiveWords.classList.add('active');
 
     // Lanzar confeti
     launchConfetti();
 
-    // Mostrar las palabras emotivas
-    showEmotiveWords();
-
-    // Tiempo para reactivar el botón (duración de la animación de confeti)
+    // Opcional: Restaurar estado después de un tiempo
     setTimeout(() => {
-        touchButton.disabled = false;
-        touchButton.style.cursor = 'pointer';
-        touchButton.style.opacity = '0.8';
+        // Puedes elegir mantener las palabras emotivas o revertir cambios
+        // touchButton.disabled = false;
+        // pastel.style.opacity = '1';
+        // pastel.style.transform = 'scale(1) rotate(0deg)';
+        // emotiveWords.classList.remove('active');
     }, 5000); // 5 segundos
 }
 
-// Función para lanzar confeti usando Canvas Confetti
+// Función para lanzar confeti
 function launchConfetti() {
-    const duration = 5 * 1000; // 5 segundos
+    const duration = 5 * 1000; // Duración del confeti en milisegundos
     const end = Date.now() + duration;
 
     (function frame() {
@@ -56,16 +57,4 @@ function launchConfetti() {
             requestAnimationFrame(frame);
         }
     }());
-}
-
-// Función para mostrar las palabras emotivas
-function showEmotiveWords() {
-    if (wordsShown) return; // Evita mostrar nuevamente
-
-    const words = document.querySelectorAll('.word');
-    words.forEach(word => {
-        word.classList.add('aos-animate');
-    });
-
-    wordsShown = true; // Marca que las palabras ya han sido mostradas
 }
